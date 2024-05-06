@@ -3,6 +3,10 @@
         message: String,
         postcode: Number
     });
+    import SiteLayout from '@/Layouts/SiteLayout.vue';
+    defineOptions({
+        layout: SiteLayout
+    });
 </script>
 
 <template>
