@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
     function index() {
-        return view('welcome');
+        return Inertia::render('Home');
     }
 
     function about() {
-        return 'About Page';
+        return  Inertia::render('About');
     }
 }
