@@ -40,6 +40,10 @@
 
         </tbody>
     </table>
+
+    <div class="mt-6">
+        <Pagination :links="users.links" />
+    </div>
 </div>
 
 </template>
