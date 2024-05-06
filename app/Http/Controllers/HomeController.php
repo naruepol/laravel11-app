@@ -12,6 +12,9 @@ class HomeController extends Controller
     }
 
     function about() {
-        return  Inertia::render('About');
+        return  Inertia::render('About', [
+            'message' => 'This is a message from the controller',
+            'postcode' => 71000
+        ]);
     }
 }

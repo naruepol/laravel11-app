@@ -1,13 +1,16 @@
 <script setup>
-import { Head } from '@inertiajs/vue3';
+    defineProps({
+        message: String,
+        postcode: Number
+    });
 </script>
 
 <template>
-
     <Head title="หน้าเกี่ยวกับ" />
     <div class="p-4 mb-4 text-lg text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
         <span class="font-medium"> About Page</span>
-        SC NPRU
+        <p>{{ message }}</p>
+        <p>{{ postcode }}</p>
     </div>
 
 <form class="max-w-[8rem] mx-auto">
@@ -32,5 +35,6 @@ import { Head } from '@inertiajs/vue3';
     <option value="DE">Germany</option>
   </select>
 </form>
+
 
 </template>
