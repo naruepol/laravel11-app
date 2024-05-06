@@ -17,4 +17,8 @@ class HomeController extends Controller
             'postcode' => 71000
         ]);
     }
+
+    function user() {
+        return  Inertia::render('User');  //User.vue
+    }
 }
