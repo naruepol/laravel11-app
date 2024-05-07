@@ -1,27 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    function index() {
-        return Inertia::render('Home');
+    public function index() {
+        return Inertia::render('Home'); // Home.vue
     }
 
-    function about() {
-        return  Inertia::render('About', [
-            'message' => 'This is a message from the controller',
-            'postcode' => 71000
-        ]);
+    public function about() {
+        return Inertia::render('About', [
+            'message' => 'Inertia',
+            'postcode' => 11000
+        ]); // About.vue
     }
 
     public function user() {
-        // $users = User::paginate(5);
+        $users = User::paginate(5);
         // return $users;
-        return  Inertia::render('User',[
-            'users' => User::all()
-        ]);  //User.vue
+        return Inertia::render('User', [
+            'users' => $users
+        ]); // User.vue
     }
 }

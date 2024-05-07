@@ -23,7 +23,7 @@
         </thead>
         <tbody>
 
-            <tr v-for="item in users" :key="item.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr v-for="item in users.data" :key="item.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{ item.id }}
                 </th>
@@ -44,17 +44,19 @@
     <div class="mt-6">
         <Pagination :links="users.links" />
     </div>
+
 </div>
 
 </template>
 
 <script setup>
     import { Head } from '@inertiajs/vue3';
+    import Pagination from '@/Components/Pagination.vue';
     import SiteLayout from '@/Layouts/SiteLayout.vue';
     defineOptions({ layout: SiteLayout });
 
 
     defineProps({
-        users: Array
+        users: Object
     });
 </script>
